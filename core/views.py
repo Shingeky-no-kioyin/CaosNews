@@ -24,3 +24,4 @@ def Periodistas(request):
 
 def usuario(request):
     return render(request, 'core/usuario.html')
+    
