@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Noticia
 
 # Create your views here.
 def PaginalPrincipal(request):
@@ -25,3 +26,12 @@ def Periodistas(request):
 def usuario(request):
     return render(request, 'core/usuario.html')
     
+def listarnoticias(request):
+
+    noticias = Noticia.objects.all()
+
+    datos = {
+        'noticias' : noticias
+    }
+
+    return render(request, 'core/listarnoticias.html',datos)

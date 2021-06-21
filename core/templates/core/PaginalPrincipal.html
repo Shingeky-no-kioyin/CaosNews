@@ -20,13 +20,13 @@
         <ul class="nav justify-content-end">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="InicioSesion.html"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+              <a class="nav-link active" href="{% url 'InicioSesion' %}"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                   height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                 </svg> Login </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="CrearUsuario.html"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+              <a class="nav-link active" href="{% url 'CrearUsuario' %}"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                   height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                 </svg> Crear Cuenta </a>
@@ -63,17 +63,17 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{% static 'core/img/Naturaleza.jpg' %}" class="d-block w-100" alt="...">
+                <img src="{% static 'core/img/Naturaleza.jpg' %}" class="d-block w-100" alt="..." width="640" height="568">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="{% static 'core/img/entretencion.jpg' %}" class="d-block w-100" alt="...">
+                <img src="{% static 'core/img/entretencion.jpg' %}" class="d-block w-100" alt="..." width="640" height="568">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="{% static 'core/img/n3.jpg' %}" class="d-block w-100" alt="...">
+                <img src="{% static 'core/img/n3.jpg' %}" class="d-block w-100" alt="..." width="640" height="568">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
               </div>

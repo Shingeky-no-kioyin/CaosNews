@@ -7,14 +7,16 @@ from .views import InicioSesion
 from .views import Noticias
 from .views import Periodistas
 from .views import usuario
+from .views import listarnoticias 
 
 urlpatterns = [
-    path(' ',PaginalPrincipal, name="PaginalPrincipal"),
+    path('',PaginalPrincipal, name="PaginalPrincipal"),
     path('Categoría/',Categoría, name="Categoría"),
     path('Contactanos/',Contactanos, name="Contactanos"),
     path('CrearUsuario/',CrearUsuario, name="CrearUsuario"),
     path('InicioSesion/',InicioSesion, name="InicioSesion"),
     path('Noticias/',Noticias, name="Noticias"),
     path('Periodistas/',Periodistas, name="Periodistas"),
-    path('usuario/',usuario, name="usuario")
+    path('usuario/',usuario, name="usuario"),
+    path('noticia/listar',listarnoticias, name="listarnoticias")
 ]
