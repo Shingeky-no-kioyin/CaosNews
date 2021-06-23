@@ -8,6 +8,9 @@ from .views import Noticias
 from .views import Periodistas
 from .views import usuario
 from .views import listarnoticias 
+from .views import agregarnoticia
+from .views import editarnoticia
+from .views import eliminarnoticia
 
 urlpatterns = [
     path('',PaginalPrincipal, name="PaginalPrincipal"),
@@ -18,5 +21,8 @@ urlpatterns = [
     path('Noticias/',Noticias, name="Noticias"),
     path('Periodistas/',Periodistas, name="Periodistas"),
     path('usuario/',usuario, name="usuario"),
-    path('noticia/listar',listarnoticias, name="listarnoticias")
+    path('noticias/listar',listarnoticias, name="listarnoticias"),
+    path('noticias/agregar',agregarnoticia, name="agregarnoticia"),
+    path('noticias/editar/<id>', editarnoticia, name="editarnoticia"),
+    path('noticias/eliminar/<id>', eliminarnoticia, name="eliminarnoticia")
 ]

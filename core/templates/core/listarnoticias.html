@@ -1,4 +1,5 @@
 {% load static %}
+{% load bootstrap4 %}
 <!DOCTYPE html>
 
 <head>
@@ -6,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mostrando Noticias</title>
-    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+    {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
 </head>
 
@@ -26,7 +27,7 @@
         </div>
         <div class="row">
             <div class="col-8">
-                <a class="nav-link active" href="{% url 'PaginalPrincipal' %}">
+                <a class="nav-link active" href="{% url 'usuario' %}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
                         <path
@@ -36,41 +37,60 @@
                 </a>
             </div>
         </div>
+
         <br>
         <br>
         <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
+            <div class="col"></div>
+            <div class="col-7">
                 <h1>Mostrando Noticias Almacenadas</h1>
             </div>
-            <div class="col-4"></div>
+            <div class="col"></div>
         </div>
+        <br>
+        <br>
+        <button id="btn1" type="button" class="btn btn-primary ">
+            <a href="{% url 'agregarnoticia' %}">Agregar Noticia</a>
+        </button>
+        <hr>
         <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <table>
+            <div class="col"></div>
+            <div class="col-7">
+                <table class="table table-hover table-dark">
                     <tr>
                         <td>idNoticia</td>
-                        <td>autor</td>
-                        <td>cantidad</td>
-                        <td>colaboradores</td>
-                        <td>correo </td>
-                        <td>Categoría</td>
+                        <td>Nombre Noticias</td>
+                        <td>Cantidad Noticias</td>
+                        <td>Colaboradores</td>
+                        <td>Correo </td>
+                        <td>Categorias</td>
+                        <td>Acciones</td>
                     </tr>
 
                     {% for i in noticias %}
-                    <tr>
-                        <td>{{ v.idNoticia }}</td>
-                        <td>{{ v.autor }}</td>
-                        <td>{{ v.cantidad }}</td>
-                        <td>{{ v.colaboradores }}</td>
-                        <td>{{ v.correo }}</td>
-                        <td>{{ v.categoria }}</td>
-                    </tr>
+                        <tr>
+                            <td>{{ idNoticia }}</td>
+                            <td>{{ nombreNoticias }}</td>
+                            <td>{{ cantidadNoticias }}</td>
+                            <td>{{ colaboradores }}</td>
+                            <td>{{ correo }}</td>
+                            <td>{{ categorias }}</td>
+                            <td>
+                                <a href="{% url 'editarnoticia' 'v.idNoticia'  %}">Editar</a>
+                                <a href="{% url 'eliminarnoticia' 'v.idNoticia'  %}">Borrar</a>
+                            </td>
+                        </tr>
                     {% endfor %}
                 </table>
             </div>
-            <div class="col-4"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-7">
+
+            </div>
+            <div class="col"></div>
         </div>
     </div>
 
