@@ -19,6 +19,7 @@ from .views import eliminarusuario
 from .views import agregarusuario
 from .views import usuarioPeriodista
 
+
 urlpatterns = [
     path('',PaginalPrincipal, name="PaginalPrincipal"),
     path('Categoría/',Categoría, name="Categoría"),

@@ -13,7 +13,7 @@ const campos = {
 	correo: false,
     password: false
 }
-
+ 
 const validarFormulario = (e) => { 
 	switch (e.target.name) { //comenzará a valizar, quiero comprobar
 		case "nombre": //quiero que el nombre del input nombre

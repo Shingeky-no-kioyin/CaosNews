@@ -13,6 +13,7 @@ button.btn-primary{
     display: none; 
   } 
   
+  
   /*mostrará si está seleccionado value=Periodista */
   input.i-radio[value="Periodista"]:checked ~ button.btn-primary{
     display: block;
