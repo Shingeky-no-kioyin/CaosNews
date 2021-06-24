@@ -1,6 +1,16 @@
 from django.shortcuts import render,redirect
+<<<<<<< HEAD:CaosNews/core/views.py
 from .models import Noticiass, Usuario
 from .forms import NoticiassForm, UsuarioForm
+=======
+<<<<<<< HEAD
+from .models import Noticiass, Usuario
+from .forms import NoticiassForm, UsuarioForm
+=======
+from .models import Noticiass
+from .forms import NoticiassForm
+>>>>>>> 20f795bd7ab827e0bcd69073f2a51f11e24a5f61
+>>>>>>> 7446d7aea11117c3bb06c88400e3dd6c4590b5b3:core/views.py
 
 # Create your views here.
 def PaginalPrincipal(request):
@@ -82,6 +92,10 @@ def eliminarnoticia(request,id):
     noticias = Noticiass.objects.get(idNoticia=id)
     noticias.delete()
 
+<<<<<<< HEAD:CaosNews/core/views.py
+=======
+<<<<<<< HEAD
+>>>>>>> 7446d7aea11117c3bb06c88400e3dd6c4590b5b3:core/views.py
     return redirect(to='listarnoticias')
 
 def listarusuario(request):
@@ -130,4 +144,11 @@ def eliminarusuario(request,id):
     usu = Usuario.objects.get(rut=id)
     usu.delete()
 
+<<<<<<< HEAD:CaosNews/core/views.py
     return redirect(to='listarusuario')
+=======
+    return redirect(to='listarusuario')
+=======
+    return redirect(to='listarnoticias')
+>>>>>>> 20f795bd7ab827e0bcd69073f2a51f11e24a5f61
+>>>>>>> 7446d7aea11117c3bb06c88400e3dd6c4590b5b3:core/views.py

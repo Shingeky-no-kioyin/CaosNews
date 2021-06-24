@@ -85,28 +85,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME': '127.0.0.1:1521/xe',
-<<<<<<< HEAD
         'USER' : 'BDBD',
         'PASSWORD' :'1234',
-=======
-<<<<<<< HEAD
-        'USER' : 'MICHI',
-        'PASSWORD' :'miau',
-=======
-        'USER' : 'CAOSNEWS2',
-        'PASSWORD' :'oracle',
->>>>>>> 20f795bd7ab827e0bcd69073f2a51f11e24a5f61
->>>>>>> 7446d7aea11117c3bb06c88400e3dd6c4590b5b3
         'TEST' :{
             'USER' : 'default_test',
             'TBLSPACE' : 'default_test_tbls',
             'TBLSPACE_TMP' : 'default_test_tbls_tmp'
         }
-<<<<<<< HEAD
-    } 
-=======
     }
->>>>>>> 20f795bd7ab827e0bcd69073f2a51f11e24a5f61
 }
 
 
