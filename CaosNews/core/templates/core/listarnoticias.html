@@ -1,0 +1,98 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrando Noticias</title>
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div id="row1" class="row">         
+          <div class="col">
+            <ul class="nav justify-content-end">
+              <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'perfil' %}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg> Volver a Periodista</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'PaginalPrincipal' %}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg > Cerrar Sesión</a>
+                    </i>
+                  </li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-7">
+                <h1>Mostrando Noticias Almacenadas</h1>
+            </div>
+            <div class="col"></div>
+        </div>
+        <br>
+        <br>
+        <button id="btn1" type="button" class="btn btn-primary ">
+            <a href="{% url 'agregarnoticia' %}">Agregar Noticia</a>
+        </button>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <table class="table table-hover table-dark">
+                    <tr>
+                        <td>ID Noticia</td>
+                        <td>Título Noticia</td>
+                        <td>Historia</td>
+                        <td>Fecha</td>
+                        <td>Ubicación </td>
+                        <td>Categoría</td>
+                        <td>Nombre Periodista</td>
+                        <td>Acciones</td>
+                    </tr>
+
+                    {% for v in noticias %}
+                        <tr>
+                            <td>{{ v.idNoticia }}</td>
+                            <td>{{ v.titulo }}</td>
+                            <td>{{ v.historia }}</td>
+                            <td>{{ v.fecha }}</td>
+                            <td>{{ v.ubicacion }}</td>
+                            <td>{{ v.categorias }}</td>
+                            <td>{{ v.periodista }}</td>
+                            <td>
+                                <a href="{% url 'editarnoticia' v.idNoticia  %}">Editar</a>
+                                <a href="{% url 'eliminarnoticia' v.idNoticia  %}">Borrar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-7">
+
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <script src="{% static 'core/js/jquery-3.6.0.js' %}"></script>
+    <script src="{% static 'core/js/popper.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuario</title>
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/iniciosesion.css' %}">
+  <script src="{% static 'core/js/jquery-3.6.0.js' %}"></script>
+  <script src="{% static 'core/js/script.js' %}"></script>
+</head>
+
+<body>
+  <div id="Caos_News" class="container">
+    <div class="container">
+      <div id="row1" class="row">
+        <div class="col">
+          <ul class="nav justify-content-end">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                  </svg> Juanito Cerrano </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'PaginalPrincipal' %}"><svg xmlns="http://www.w3.org/2000/svg"
+                    width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                  </svg> Cerrar Sesión</a>
+                </i>
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+
+      <div id="Caos_News" class="row">
+        <div class="col-1">
+          <hr>
+          <img src="{% static 'core/img/caos news.PNG' %}" class="rounded-circle" alt="...">
+        </div>
+        <div class="col-2">
+          <hr>
+          <h1>Caos News</h1>
+          <h6>Noticias las 24 horas</h6>
+        </div>
+        <div class="col-9">
+          <ul class="nav justify-content-end">
+            <div id="clima">
+              <div id="icoClima">
+                <img id="imgClima" src="" alt="">
+              </div>
+              <div id="dataClima">
+                <span id="ciudad"></span><br>
+                <span id="fecha"></span><br>
+                <span id="temperatura"></span>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="col">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'listarusuario' %}">Listar usuario</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <hr>
+      <div class="row">
+        {% for v in periodistas %}
+        <tr>
+          <td>{{ v.run }}</td>
+          <td>{{ v.nombre }}</td>
+          <td>{{ v.correo }}</td>
+          <td>{{ v.contraseña }}</td>
+        </tr>
+        {% endfor %}
+        <div class="col-4">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list"
+              href="#list-home" role="tab" aria-controls="home">Nombre</a>
+            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+              href="#list-profile" role="tab" aria-controls="profile">Rut</a>
+            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
+              href="#list-messages" role="tab" aria-controls="messages">Correo Electrónico</a>
+            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+              href="#list-settings" role="tab" aria-controls="settings">Contraseña</a>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+              Juan Cerrano</div>
+            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">34.567.432-1
+            </div>
+            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                ju.rrano@gmail.com</div>
+            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">juancito123
+            </div>
+          </div>
+        </div>
+        <div class="col-4"><img src="{% static 'core/img/periodista4.jpg' %}" class="d-block w-100" alt="..."
+            width="600" height="315"></div>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+        <hr>
+        <footer>
+          <hr>
+          <div id="rowFooter" class="row">
+
+            <h5> *Nuestras Sucursales: </h5>
+            <hr>
+          </div>
+
+          <div id="rowFooter" class="row">
+            <div class="col-4">
+              <div class="col-6">
+                <address>
+                  AV. Libertad #846
+                  Ofiina 32,
+                  Viña del Mar.
+                </address>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="col-6">
+                <address>
+                  Calle Central #054
+                  Ofiina 808,
+                  Santiago.
+                </address>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="col-6">
+                <address>
+                  Calle Diogo Barros Arena #1120
+                  Ofiina 12,
+                  Concepción.
+                </address>
+              </div>
+            </div>
+
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="{% static 'core/js/jquery-3.6.0.js' %}"></script>
+    <script src="{% static 'core/js/popper.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.js' %}"></script>
+</body>
+</head>
