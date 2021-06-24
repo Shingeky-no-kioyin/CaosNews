@@ -1,6 +1,12 @@
 body{
     background-color: #f1eded;
 }
+#gg{
+	background-color: #f1eded;
+}
+#wtf{
+	color: #bb2929;
+}
 div.b {
     -webkit-text-decoration-line: underline;
     text-decoration-line: underline; 
