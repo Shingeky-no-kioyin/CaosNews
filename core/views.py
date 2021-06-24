@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from .models import Noticiass
-from .forms import NoticiassForm
+from .models import Noticiass, Usuario
+from .forms import NoticiassForm, UsuarioForm
 
 # Create your views here.
 def PaginalPrincipal(request):
@@ -29,6 +29,12 @@ def usuario(request):
 
 def perfil(request):
     return render(request, 'core/perfil.html')
+
+def perfilusuario(request):
+    return render(request, 'core/perfilusuario.html')
+
+def usuarioPeriodista(request):
+    return render(request, 'core/usuarioPeriodista.html')
     
 def listarnoticias(request):
 
@@ -77,3 +83,51 @@ def eliminarnoticia(request,id):
     noticias.delete()
 
     return redirect(to='listarnoticias')
+
+def listarusuario(request):
+
+    usu = Usuario.objects.all()
+
+    datos = {
+        'usu' : usu
+    }
+
+    return render(request, 'core/listarusuario.html',datos)
+
+def editarusuario(request,id):
+    
+    usu = Usuario.objects.get(rut=id)
+
+    datos = {
+        'form' : UsuarioForm(instance=usu)
+    }
+
+    if request.method == 'POST':
+        formulario = UsuarioForm(data=request.POST, instance=usu)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = 'Usuario modificado correctamente'
+
+    return render(request, 'core/editarusuario.html', datos)
+
+def agregarusuario(request):
+    form = UsuarioForm()
+
+    datos = {
+        'form' : form
+    }
+
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid:
+            form.save()
+            datos['mensaje']= 'Usuario agregado correctamente'
+
+
+    return render(request, 'core/agregarusuario.html',datos)
+
+def eliminarusuario(request,id):
+    usu = Usuario.objects.get(rut=id)
+    usu.delete()
+
+    return redirect(to='listarusuario')

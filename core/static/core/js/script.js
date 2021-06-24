@@ -6,7 +6,7 @@ $(document).ready(function () {
     $("#txt1").blur(function () {
         console.log("txt1 perdió el foco")
         if ($("#txt1").val().length < 4) {
-            $("#error1").html("Recuerda que el nombre de usuario debe tener como minimo 4 caracteres")
+            $("#error1").html("Recuerda que el correo debe de tener dominio, por ejemplo erizo.12@duocuc.cl")
             $("#error1").fadeIn()
         } else {
             $("#error1")
@@ -81,7 +81,7 @@ function getClima(posicion) {
 
 function manejo_errores(error) {
     switch (error.code) {
-        case error.PERMISSION_DENIED: console.log("El usurio no compartió su ubicación geográfica");
+        case error.PERMISSION_DENIED: console.log("El usuario no compartió su ubicación geográfica");
             break;
         case error.POSITION_UNAVAILABLE: console.log("No se pudo detectar la posición geográfica actual");
             break;

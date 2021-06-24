@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificando Noticias</title>
+    <title>Modificando Usuarios</title>
     {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
 </head>
@@ -26,16 +26,12 @@
             </div>
             <div id="row1" class="col-9"></div>
         </div>
-        <div class="row">
-            <div class="col-8">
-            </div>
-        </div>
         <br>
         <br>
         <div class="row">
             <div class="col-4"></div>
             <div class="col-5">
-                <h1>¡Modifica la Noticia!</h1>
+                <h1>¡Modifica Tu Perfil!</h1>
             </div>
             <div class="col-"></div>
 
@@ -45,14 +41,14 @@
         <div class="row" id="gg">
             <div class="col-4"></div>
             <div class="col-4">
-                <form action="" method="POST" id="formula1">
+                <form action="" method="POST" id="formula2">
                     {% csrf_token %}
                     {{ form|crispy }}
 
                     <br>
                     <button type="submit" class="btn btn-primary">Modificar</button>
-
-                    <button class="btn btn-secondary"><a href="{% url 'listarnoticias' %}">Cancelar</a></button>
+                    
+                    <button class="btn btn-secondary"><a href="{% url 'perfilusuario' %}">Cancelar</a></button>
                 </form>
 
                 <span id="wtf"> {{ mensaje }} </span>

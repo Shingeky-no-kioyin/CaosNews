@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Periodista perfil</title>
+  <title>Perfil de Usuario</title>
   {% bootstrap_css %}
   <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
   <link rel="stylesheet" href="{% static 'core/css/iniciosesion.css' %}">
@@ -25,7 +25,7 @@
                 <a class="nav-link active" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                     fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                  </svg> BEATRIZ ALARCON </a>
+                  </svg> Juanito Cerrano </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="{% url 'PaginalPrincipal' %}"><svg xmlns="http://www.w3.org/2000/svg"
@@ -71,10 +71,7 @@
         <div class="col">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link active" href="{% url 'usuarioPeriodista' %}">Vista Noticias</a>
-            </li> 
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'listarnoticias' %}">Listar Noticias</a>
+              <a class="nav-link" href="{% url 'listarusuario' %}">Listar usuario</a>
             </li>
           </ul>
         </div>
@@ -105,16 +102,16 @@
         <div class="col-4">
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-              BEATRIZ ALARCON</div>
-            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">17.945.259-6
+              Juan Cerrano</div>
+            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">34.567.432-1
             </div>
             <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-              BEATRIZ_ALARCON@GMAIL.COM</div>
-            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">BALARCON
+                ju.rrano@gmail.com</div>
+            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">juancito123
             </div>
           </div>
         </div>
-        <div class="col-4"><img src="{% static 'core/img/periodista1.jpg' %}" class="d-block w-100" alt="..."
+        <div class="col-4"><img src="{% static 'core/img/periodista4.jpg' %}" class="d-block w-100" alt="..."
             width="600" height="315"></div>
         <div class="row">
           <div class="col"></div>

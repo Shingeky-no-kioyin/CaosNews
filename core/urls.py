@@ -12,6 +12,12 @@ from .views import agregarnoticia
 from .views import editarnoticia
 from .views import eliminarnoticia
 from .views import perfil
+from .views import perfilusuario
+from .views import listarusuario
+from .views import editarusuario
+from .views import eliminarusuario
+from .views import agregarusuario
+from .views import usuarioPeriodista
 
 urlpatterns = [
     path('',PaginalPrincipal, name="PaginalPrincipal"),
@@ -26,5 +32,11 @@ urlpatterns = [
     path('noticias/agregar',agregarnoticia, name="agregarnoticia"),
     path('noticias/editar/<id>', editarnoticia, name="editarnoticia"),
     path('noticias/eliminar/<id>', eliminarnoticia, name="eliminarnoticia"),
-    path('periodistas/verperfil', perfil, name="perfil")
+    path('periodistas/verperfil', perfil, name="perfil"),
+    path('usuario/verperfil', perfilusuario, name="perfilusuario"),
+    path('usuario/listar', listarusuario, name='listarusuario'),
+    path('usuario/editar/<id>', editarusuario, name='editarusuario'),
+    path('usuario/borrar/<id>', eliminarusuario, name='eliminarusuario'),
+    path('usuario/agregar', agregarusuario, name='agregarusuario'),
+    path('usuarioPeriodista', usuarioPeriodista, name='usuarioPeriodista')
 ]
