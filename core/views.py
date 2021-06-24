@@ -1,6 +1,11 @@
 from django.shortcuts import render,redirect
+<<<<<<< HEAD
 from .models import Noticiass, Usuario
 from .forms import NoticiassForm, UsuarioForm
+=======
+from .models import Noticiass
+from .forms import NoticiassForm
+>>>>>>> 20f795bd7ab827e0bcd69073f2a51f11e24a5f61
 
 # Create your views here.
 def PaginalPrincipal(request):
@@ -82,6 +87,7 @@ def eliminarnoticia(request,id):
     noticias = Noticiass.objects.get(idNoticia=id)
     noticias.delete()
 
+<<<<<<< HEAD
     return redirect(to='listarnoticias')
 
 def listarusuario(request):
@@ -131,3 +137,6 @@ def eliminarusuario(request,id):
     usu.delete()
 
     return redirect(to='listarusuario')
+=======
+    return redirect(to='listarnoticias')
+>>>>>>> 20f795bd7ab827e0bcd69073f2a51f11e24a5f61

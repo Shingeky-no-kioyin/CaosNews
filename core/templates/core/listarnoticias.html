@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="container">
         <div id="row1" class="row">         
           <div class="col">
@@ -32,6 +33,32 @@
               </ul>
             </ul>
           </div>
+=======
+    <div id="Caos_News" class="container-fluid">
+        <div id="row1" class="row">
+            <div class="col-1">
+                <ul class="nav">
+                    <img src="{% static 'core/img/caos news.PNG' %}" class="rounded-circle" alt="...">
+                </ul>
+            </div>
+            <div id="row2" class="col-2">
+                <h1>Caos News</h1>
+                <h6>Noticias las 24 horas</h6>
+            </div>
+            <div id="row1" class="col-9"></div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <a class="nav-link active" href="{% url 'usuario' %}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                    </svg>
+                    volver
+                </a>
+            </div>
+>>>>>>> 20f795bd7ab827e0bcd69073f2a51f11e24a5f61
         </div>
 
         <br>
@@ -50,6 +77,7 @@
         </button>
         <hr>
         <div class="row">
+<<<<<<< HEAD
             <div class="col">
                 <table class="table table-hover table-dark">
                     <tr>
@@ -75,11 +103,41 @@
                             <td>
                                 <a href="{% url 'editarnoticia' v.idNoticia  %}">Editar</a>
                                 <a href="{% url 'eliminarnoticia' v.idNoticia  %}">Borrar</a>
+=======
+            <div class="col"></div>
+            <div class="col-7">
+                <table class="table table-hover table-dark">
+                    <tr>
+                        <td>idNoticia</td>
+                        <td>Nombre Noticias</td>
+                        <td>Cantidad Noticias</td>
+                        <td>Colaboradores</td>
+                        <td>Correo </td>
+                        <td>Categorias</td>
+                        <td>Acciones</td>
+                    </tr>
+
+                    {% for i in noticias %}
+                        <tr>
+                            <td>{{ idNoticia }}</td>
+                            <td>{{ nombreNoticias }}</td>
+                            <td>{{ cantidadNoticias }}</td>
+                            <td>{{ colaboradores }}</td>
+                            <td>{{ correo }}</td>
+                            <td>{{ categorias }}</td>
+                            <td>
+                                <a href="{% url 'editarnoticia' 'v.idNoticia'  %}">Editar</a>
+                                <a href="{% url 'eliminarnoticia' 'v.idNoticia'  %}">Borrar</a>
+>>>>>>> 20f795bd7ab827e0bcd69073f2a51f11e24a5f61
                             </td>
                         </tr>
                     {% endfor %}
                 </table>
             </div>
+<<<<<<< HEAD
+=======
+            <div class="col"></div>
+>>>>>>> 20f795bd7ab827e0bcd69073f2a51f11e24a5f61
         </div>
         <div class="row">
             <div class="col"></div>
