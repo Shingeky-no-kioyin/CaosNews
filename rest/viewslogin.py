@@ -26,3 +26,5 @@ def login(request):
     token, created = Token.objects.get_or_create(user=user)
 
     return Response(token.key)
+
+    

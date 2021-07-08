@@ -131,3 +131,4 @@ def eliminarusuario(request,id):
     usu.delete()
 
     return redirect(to='listarusuario')
+

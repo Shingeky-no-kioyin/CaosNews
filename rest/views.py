@@ -10,8 +10,6 @@ from rest_framework.permissions import IsAuthenticated
 from core.models import Noticiass
 
 
-from core.models import Noticiass
-
 # Create your views here.
 @csrf_exempt
 @api_view(['GET','POST'])

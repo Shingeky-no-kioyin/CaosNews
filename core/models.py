@@ -42,3 +42,4 @@ class Usuario(models.Model):
     contrasenna = models.CharField(max_length=35, verbose_name='Contraseña Usuario')
     def __str__(self):
         return self.nombreUsu
+
